@@ -24,6 +24,7 @@ $(document).ready(function () {
 				else{
 					alert('Program error');
 				}
+				console.log(response);
 			}
 		});
 
