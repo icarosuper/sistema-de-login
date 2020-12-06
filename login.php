@@ -11,7 +11,7 @@
 
 <body class="text-center">
 	<main class="d-flex justify-content-center align-items-center" style="height: 95%;">
-		<form id="cadastroform" class="form-signin rounded-lg p-4 shadow-lg" style="width: 350px;" method="POST">
+		<form class="form-signin rounded-lg p-4 shadow-lg" style="width: 350px;" method="POST">
 			<h1 class="h3 mb-4 font-weight-normal">Login</h1>
 			<div class="form-label-group">
 				<input type="email" id="inputemail" class="form-control mb-2" placeholder="Email" required autofocus>
@@ -38,7 +38,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
 			crossorigin="anonymous"></script>
-		<script src="scripts/post.js"></script>
+		<script src="scripts/login-page-script.js"></script>
 	</footer>
 </body>
 
