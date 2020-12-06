@@ -5,10 +5,11 @@
 
 		$email=$_POST['email'];
 		$pass=$_POST['password'];
-		$select_data=mysqli_query($connect,"SELECT * FROM user WHERE email='$email' and login='$pass'");
+		$select_data=mysqli_query($connect,"SELECT * FROM user WHERE email='$email' and password='$pass'");
 
 		if($row=mysqli_fetch_array($select_data)){
-			$_SESSION['email']=$row['email'];
+			$_SESSION['logged'] = true;
+			$_SESSION['name']=$row['name'];
 			echo "success";
 		} 
 		else{

@@ -3,22 +3,20 @@ $(document).ready(function () {
 		e.preventDefault();
 		$('form *').prop('disabled', true);
 
-		var name = $('#inputname').val();
 		var email = $('#inputemail').val();
 		var pass = $('#inputpw').val();
 
 		$.ajax({
 			type: 'POST',
-			url: '../php/do_register.php',
+			url: '../database/do_login.php',
 			data: {
-				do_register: "do_register",
-				name: name,
+				do_login: "do_login",
 				email: email,
 				password: pass
 			},
 			success: function (response) {
 				if (response == "success") {
-					window.location.href = "login.php";
+					window.location.href = "logged.php";
 				}
 				else if (response == "fail") {
 					alert("Wrong Details");
