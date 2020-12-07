@@ -22,9 +22,9 @@
 </head>
 
 <body>
-	<div id="main_div" class="text-center" style="height: 100%;">
+	<div id="main_div" class="text-center text-dark" style="height: 100%;">
 		<main class="d-flex justify-content-center align-items-center" style="height: 95%;">
-			<form class="form-signin rounded-lg p-4 shadow-lg was-validated" style="width: 350px;" oninput='confirmpw.setCustomValidity(confirmpw.value != inputpw.value ? "As senhas não são iguais, se certifique de colocar a mesma senha nos dois campos." : "")'>
+			<form class="form-signin rounded-lg p-4 shadow-lg was-validated bg-light" style="width: 350px;" oninput='confirmpw.setCustomValidity(confirmpw.value != inputpw.value ? "As senhas não são iguais, se certifique de colocar a mesma senha nos dois campos." : "")'>
 				<h1 class="h3 mb-4 font-weight-normal">Cadastro</h1>
 				<div class="form-label-group">
 					<input type="text" id="inputname" class="form-control" placeholder="Nome completo" required autofocus>
@@ -56,9 +56,9 @@
 		<script src="../scripts/darkmode.js"></script>
 		<?php
 			if($_COOKIE['mode'] == 'dark'){
-				echo '<script>';
-				echo 'GoDark();';
-				echo '</script>';
+				echo "<script>";
+				echo "$('#main_div').addClass('bg-dark');";
+				echo "</script>";
 			}
 		?>
 	</footer>

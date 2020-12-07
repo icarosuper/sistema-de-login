@@ -30,12 +30,10 @@
 </head>
 <body>
 	<div id="main_div" class="text-center" style="height: 100%;">
-		<div class="d-flex justify-content-center align-items-center" style="height: 80%;">
-			<h1 id="welcome"></h1>
-		</div>
-		<div class="d-flex justify-content-center align-items-center" style="height: 10%;">
-			<form method="POST">
-				<input id="logout" type='submit' name='logout' value='Logout'>
+		<div class="d-flex justify-content-center align-items-center" style="height: 95%;">
+			<form method="POST" class="form-signin rounded-lg p-4 shadow-lg bg-light">
+				<h1 id="welcome" class="m-3"></h1>
+				<input id="logout" type='submit' name='logout' value='Logout' class="btn btn-outline-danger btn-lg m-3">
 			</form>
 		</div>
 		<button id="dm_btn" class="btn btn-link shadow-none" style="color:#007bff!important;">alternar modo escuro</button>
@@ -45,7 +43,7 @@
 		<script>
 			$(document).ready(function(){
 				var username = "<?php echo $_SESSION['name']; ?>";
-				$('#welcome').text('Bem vindo ' + username);
+				$('#welcome').text('Bem vindo '+username+'!');
 				$('#logout').click(function(){
 					alert('Você não está mais logado!');
 				})
@@ -53,9 +51,9 @@
 		</script>
 		<?php
 			if($_COOKIE['mode'] == 'dark'){
-				echo '<script>';
-				echo 'GoDark();';
-				echo '</script>';
+				echo "<script>";
+				echo "$('#main_div').addClass('bg-dark');";
+				echo "</script>";
 			}
 		?>
 	</footer>

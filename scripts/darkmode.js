@@ -8,10 +8,6 @@ $(document).ready(function(){
 	})
 })
 
-function GoDark(){
-	$('#main_div').addClass('bg-dark text-light');
-}
-
 function GetCookie(cname) {
 	var name = cname + "=";
 	var decodedCookie = decodeURIComponent(document.cookie);

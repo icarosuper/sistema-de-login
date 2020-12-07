@@ -24,9 +24,9 @@
 </head>
 
 <body>
-	<div id="main_div" class="text-center" style="height: 100%;">
+	<div id="main_div" class="text-center text-dark" style="height: 100%;">
 		<main class="d-flex justify-content-center align-items-center" style="height: 95%;">
-			<form class="form-signin rounded-lg p-4 shadow-lg" style="width: 350px;" method="POST">
+			<form class="form-signin rounded-lg p-4 shadow-lg bg-light" style="width: 350px;" method="POST">
 				<h1 class="h3 mb-4 font-weight-normal">Login</h1>
 				<div class="form-label-group">
 					<input type="email" id="inputemail" class="form-control mb-2" placeholder="Email" required autofocus>
@@ -53,9 +53,9 @@
 		<script src="../scripts/darkmode.js"></script>
 		<?php
 			if($_COOKIE['mode'] == 'dark'){
-				echo '<script>';
-				echo 'GoDark();';
-				echo '</script>';
+				echo "<script>";
+				echo "$('#main_div').addClass('bg-dark');";
+				echo "</script>";
 			}
 		?>
 	</footer>
