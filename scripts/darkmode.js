@@ -1,7 +1,6 @@
 $(document).ready(function () {
 	$('#dm_btn').click(function () {
 		var mode = GetCookie('mode');
-		if (mode === "") { mode = 'light'; }
 		mode == 'dark' ? mode = 'light' : mode = 'dark';
 		document.cookie = 'mode=' + mode;
 		location.reload();

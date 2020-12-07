@@ -1,31 +1,32 @@
 $(document).ready(function () {
+	$('#show_pw').click(function(){
+		var input = document.getElementById('input_pw');
+		var confirm = document.getElementById('confirm_pw');
+		input.type === 'password' ? input.type = confirm.type = 'text' : input.type = confirm.type = 'password';
+	})
+
 	$('form').submit(function (e) {
 		e.preventDefault();
 		$('form *').prop('disabled', true);
 
-		var name = $('#inputname').val();
-		var email = $('#inputemail').val();
-		var pass = $('#inputpw').val();
+		var name = $('#input_name').val();
+		var email = $('#input_email').val();
+		var pass = $('#input_pw').val();
 
 		$.ajax({
 			type: 'POST',
-			url: '../database/do_register.php',
+			url: '../database/register-operation.php',
 			data: {
-				do_register: "do_register",
 				name: name,
 				email: email,
 				password: pass
 			},
 			success: function (response) {
-				if (response == "success") {
+				if (response == 'success') {
 					alert('Usuário criado com sucesso!')
-					window.location.href = "login.php";
-				}
-				else if (response == "fail") {
-					alert('Erro nos detalhes de cadastro');
-				}
-				else {
-					alert('Erro de código');
+					window.location.href = "login-page.php";
+				} else {
+					alert(response);
 				}
 			}
 		});

@@ -2,9 +2,11 @@
 	session_start();
 
 	if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
-		echo '<script>';
-		echo 'window.location.href = "logged.php";';
-		echo '</script>';
+		header('location: user-page.php');
+	}
+
+	if(!isset($_COOKIE['mode'])){
+		setcookie('mode', 'light', time()+(60*60*24));
 	}
 ?>
 
@@ -26,23 +28,23 @@
 <body>
 	<div id="main_div" class="text-center text-dark" style="height: 100%;">
 		<main class="d-flex justify-content-center align-items-center" style="height: 95%;">
-			<form class="form-signin rounded-lg p-5 shadow-lg bg-light" style="width: 350px;" method="POST">
+			<form class="form-signin rounded-lg p-5 shadow-lg bg-light" style="width: 350px;">
 				<h1 class="h3 mb-4 font-weight-normal">Login</h1>
 				<div class="form-label-group">
-					<input type="email" id="inputemail" class="form-control mb-2" placeholder="Email" required
+					<input type="email" id="input_email" class="form-control mb-2" placeholder="Email" required
 						autofocus>
-					<label for="inputemail">Email</label>
+					<label for="input_email">Email</label>
 				</div>
 				<div class="form-label-group">
-					<input type="password" id="inputpw" class="form-control" name="senha" placeholder="Senha" required>
-					<label for="inputpw">Senha</label>
+					<input type="password" id="input_pw" class="form-control" name="senha" placeholder="Senha" required>
+					<label for="input_pw">Senha</label>
 				</div>
 				<!----- O BOTÃO DE MANTER CONECTADO NÃO FUNCIONA AINDA ----->
 				<div name="remember-me" class="checkbox mt-2 mb-1">
 					<label class="justify-center">
 						<input type="checkbox" value="remember-me">
 						Me mantenha conectado<br>
-						<a href="register.php">Criar uma conta</a>
+						<a href="register-page.php">Criar uma conta</a>
 					</label>
 				</div>
 				<button id="submit" class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>

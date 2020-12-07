@@ -2,17 +2,16 @@
 	session_start();
 	
 	if (!(isset($_SESSION['logged'])) || $_SESSION['logged'] == false) {
-		echo '<script>';
-		echo 'window.location.href = "login.php";';
-		echo '</script>';
+		header('location: login-page.php');
 	}
 	
 	if(isset($_POST['logout'])){
-		unset($_SESSION['logged']);
-		unset($_SESSION['name']);
-		echo '<script>';
-		echo 'window.location.href = "login.php";';
-		echo '</script>';
+		session_destroy();
+		header('location: login-page.php');
+	}
+
+	if(!isset($_COOKIE['mode'])){
+		setcookie('mode', 'light', time()+3600);
 	}
 ?>
 
@@ -38,14 +37,13 @@
 				<input id="logout" type='submit' name='logout' value='Logout' class="btn btn-outline-danger btn-lg m-3">
 			</form>
 		</div>
-		<button id="dm_btn" class="btn btn-link shadow-none" style="color:#007bff!important;">alternar modo
-			escuro</button>
+		<button id="dm_btn" class="btn btn-link shadow-none" style="color:#007bff!important;">alternar modo escuro</button>
 	</div>
 	<footer>
 		<script src="../scripts/darkmode.js"></script>
 		<script>
 			$(document).ready(function () {
-				var username = "<?php echo $_SESSION['name']; ?>";
+				var username = "<?php echo $_SESSION['username']; ?>";
 				$('#welcome').text('Bem vindo ' + username + '!');
 				$('#logout').click(function () {
 					alert('Você não está mais logado!');
