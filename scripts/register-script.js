@@ -24,7 +24,7 @@ $(document).ready(function () {
 				else if (response == "fail") {
 					alert('Erro nos detalhes de cadastro');
 				}
-				else{
+				else {
 					alert('Erro de código');
 				}
 			}

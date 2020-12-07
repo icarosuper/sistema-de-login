@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	
-	if (!(isset($_SESSION['logged']))) {
+	if (isset($_SESSION['logged'])) {
 		$_SESSION['logged'] = false;
 	}
 ?>
@@ -24,10 +24,12 @@
 <body>
 	<div id="main_div" class="text-center text-dark" style="height: 100%;">
 		<main class="d-flex justify-content-center align-items-center" style="height: 95%;">
-			<form class="form-signin rounded-lg p-4 shadow-lg was-validated bg-light" style="width: 350px;" oninput='confirmpw.setCustomValidity(confirmpw.value != inputpw.value ? "As senhas não são iguais, se certifique de colocar a mesma senha nos dois campos." : "")'>
+			<form class="form-signin rounded-lg p-4 shadow-lg was-validated bg-light" style="width: 350px;"
+				oninput='confirmpw.setCustomValidity(confirmpw.value != inputpw.value ? "As senhas não são iguais, se certifique de colocar a mesma senha nos dois campos." : "")'>
 				<h1 class="h3 mb-4 font-weight-normal">Cadastro</h1>
 				<div class="form-label-group">
-					<input type="text" id="inputname" class="form-control" placeholder="Nome completo" required autofocus>
+					<input type="text" id="inputname" class="form-control" placeholder="Nome completo" required
+						autofocus>
 					<label for="inputname">Nome completo</label>
 				</div>
 				<div class="form-label-group">
@@ -39,8 +41,8 @@
 					<label for="inputpw">Senha</label>
 				</div>
 				<div class="form-label-group">
-					<input type="password" id="confirmpw" class="form-control" name="senha" placeholder="Confirme sua senha"
-						required>
+					<input type="password" id="confirmpw" class="form-control" name="senha"
+						placeholder="Confirme sua senha" required>
 					<label for="confirmpw">Confirme sua senha</label>
 				</div>
 				<button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
@@ -49,7 +51,8 @@
 				</div>
 			</form>
 		</main>
-		<button id="dm_btn" class="btn btn-link shadow-none" style="color:#007bff!important;">alternar modo escuro</button>
+		<button id="dm_btn" class="btn btn-link shadow-none" style="color:#007bff!important;">alternar modo
+			escuro</button>
 	</div>
 	<footer>
 		<script src="../scripts/register-script.js"></script>

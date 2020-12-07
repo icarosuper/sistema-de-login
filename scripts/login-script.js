@@ -23,7 +23,7 @@ $(document).ready(function () {
 				else if (response == "fail") {
 					alert('Email e(ou) senha errado(s)');
 				}
-				else{
+				else {
 					alert('Erro de código');
 				}
 			}

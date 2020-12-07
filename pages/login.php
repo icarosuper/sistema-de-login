@@ -26,16 +26,18 @@
 <body>
 	<div id="main_div" class="text-center text-dark" style="height: 100%;">
 		<main class="d-flex justify-content-center align-items-center" style="height: 95%;">
-			<form class="form-signin rounded-lg p-4 shadow-lg bg-light" style="width: 350px;" method="POST">
+			<form class="form-signin rounded-lg p-5 shadow-lg bg-light" style="width: 350px;" method="POST">
 				<h1 class="h3 mb-4 font-weight-normal">Login</h1>
 				<div class="form-label-group">
-					<input type="email" id="inputemail" class="form-control mb-2" placeholder="Email" required autofocus>
+					<input type="email" id="inputemail" class="form-control mb-2" placeholder="Email" required
+						autofocus>
 					<label for="inputemail">Email</label>
 				</div>
 				<div class="form-label-group">
-					<input type="text" id="inputpw" class="form-control" name="senha" placeholder="Senha" required>
+					<input type="password" id="inputpw" class="form-control" name="senha" placeholder="Senha" required>
 					<label for="inputpw">Senha</label>
 				</div>
+				<!----- O BOTÃO DE MANTER CONECTADO NÃO FUNCIONA AINDA ----->
 				<div name="remember-me" class="checkbox mt-2 mb-1">
 					<label class="justify-center">
 						<input type="checkbox" value="remember-me">
@@ -46,7 +48,8 @@
 				<button id="submit" class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
 			</form>
 		</main>
-		<button id="dm_btn" class="btn btn-link shadow-none" style="color:#007bff!important;">alternar modo escuro</button>
+		<button id="dm_btn" class="btn btn-link shadow-none" style="color:#007bff!important;">alternar modo
+			escuro</button>
 	</div>
 	<footer>
 		<script src="../scripts/login-script.js"></script>

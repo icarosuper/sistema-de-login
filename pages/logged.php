@@ -17,6 +17,7 @@
 ?>
 
 <html lang="pt-br">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,6 +29,7 @@
 		integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
 		crossorigin="anonymous"></script>
 </head>
+
 <body>
 	<div id="main_div" class="text-center" style="height: 100%;">
 		<div class="d-flex justify-content-center align-items-center" style="height: 95%;">
@@ -36,15 +38,16 @@
 				<input id="logout" type='submit' name='logout' value='Logout' class="btn btn-outline-danger btn-lg m-3">
 			</form>
 		</div>
-		<button id="dm_btn" class="btn btn-link shadow-none" style="color:#007bff!important;">alternar modo escuro</button>
+		<button id="dm_btn" class="btn btn-link shadow-none" style="color:#007bff!important;">alternar modo
+			escuro</button>
 	</div>
 	<footer>
 		<script src="../scripts/darkmode.js"></script>
 		<script>
-			$(document).ready(function(){
+			$(document).ready(function () {
 				var username = "<?php echo $_SESSION['name']; ?>";
-				$('#welcome').text('Bem vindo '+username+'!');
-				$('#logout').click(function(){
+				$('#welcome').text('Bem vindo ' + username + '!');
+				$('#logout').click(function () {
 					alert('Você não está mais logado!');
 				})
 			})			
@@ -58,4 +61,5 @@
 		?>
 	</footer>
 </body>
+
 </html>
