@@ -1,18 +1,18 @@
-window.onload = function () { document.querySelector('#dmBtn').addEventListener('click', changemode); }
+$(document).ready(function(){ 
+	$('#dm_btn').click(function(){
+		var mode = GetCookie('mode');
+		if(mode === ""){mode = 'light';}
+		mode == 'dark' ? mode = 'light' : mode = 'dark';
+		document.cookie = 'mode='+mode;
+		location.reload();
+	})
+})
 
-function changemode() {
-	var mode = getCookie('mode');
-	if(mode === ""){mode = 'light';}
-	mode == 'dark' ? mode = 'light' : mode = 'dark';
-	document.cookie = 'mode='+mode;
-	location.reload();
-};
-
-function godark(){
-	document.querySelector('body').classList.add('bg-dark', 'text-light');
+function GoDark(){
+	$('#main_div').addClass('bg-dark text-light');
 }
 
-function getCookie(cname) {
+function GetCookie(cname) {
 	var name = cname + "=";
 	var decodedCookie = decodeURIComponent(document.cookie);
 	var ca = decodedCookie.split(';');

@@ -18,13 +18,14 @@ $(document).ready(function () {
 			},
 			success: function (response) {
 				if (response == "success") {
+					alert('Usuário criado com sucesso!')
 					window.location.href = "login.php";
 				}
 				else if (response == "fail") {
-					alert("Wrong Details");
+					alert('Erro nos detalhes de cadastro');
 				}
 				else{
-					alert('Program error');
+					alert('Erro de código');
 				}
 			}
 		});

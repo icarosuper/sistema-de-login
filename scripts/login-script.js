@@ -15,14 +15,16 @@ $(document).ready(function () {
 				password: pass
 			},
 			success: function (response) {
+				console.log(response);
 				if (response == "success") {
+					alert('Você logou com sucesso!')
 					window.location.href = "logged.php";
 				}
 				else if (response == "fail") {
-					alert("Wrong Details");
+					alert('Email e(ou) senha errado(s)');
 				}
 				else{
-					alert('Program error');
+					alert('Erro de código');
 				}
 			}
 		});
