@@ -43,7 +43,7 @@
 		<script src="../scripts/darkmode.js"></script>
 		<script>
 			$(document).ready(function () {
-				var username = "<?php echo $_SESSION['username']; ?>";
+				var username = '<?php echo $_SESSION['username']; ?>'.split(' ', 1);
 				$('#welcome').text('Bem vindo ' + username + '!');
 				$('#logout').click(function () {
 					alert('Você não está mais logado!');

@@ -42,7 +42,7 @@
 				<!----- O BOTÃO DE MANTER CONECTADO NÃO FUNCIONA AINDA ----->
 				<div name="remember-me" class="checkbox mt-2 mb-1">
 					<label class="justify-center">
-						<input type="checkbox" value="remember-me">
+						<input type="checkbox" value="remember-me" disabled>
 						Me mantenha conectado<br>
 						<a href="register-page.php">Criar uma conta</a>
 					</label>
